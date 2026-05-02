@@ -1,0 +1,8 @@
+*.o
+bzip2_phase1
+bzip2_phase2
+verify
+*_phase*.bwt
+*_phase*.mtf
+*_phase*.rle2
+test_input.txt

@@ -1,0 +1,6 @@
+AAAAAABBBBBBBBBBCCCCCCCCCCCCDDDDDDDDDD
+hello hello hello hello hello
+data compression project test file
+Burrows Wheeler Transform followed by Move To Front and RLE2
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+The quick brown fox jumps over the lazy dog.
