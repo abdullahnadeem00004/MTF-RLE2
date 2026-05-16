@@ -22,7 +22,7 @@ typedef struct {
     char    bwt_type[32];        /* "matrix" or "suffix_array" */
     bool    mtf_enabled;
     bool    rle2_enabled;
-    bool    huffman_enabled;
+    bool    ans_enabled;
 
     bool    benchmark_mode;
     bool    output_metrics;
@@ -236,5 +236,30 @@ void bwt_decode(unsigned char *input, size_t len,
 void bwt_encode_auto(const char *bwt_type,
                      unsigned char *input, size_t len,
                      unsigned char *output, int *primary_index);
+
+/* ─────────────────────────────────────────────────────────────
+ *  ans.c  –  Asymmetric Numeral Systems entropy coder (final stage)
+ * ───────────────────────────────────────────────────────────── */
+
+/*
+ * Entropy-encode in[0..len) using tANS.
+ * Allocates *out (caller must free).
+ * Returns 0 on success, -1 on error.
+ */
+int ans_encode(const unsigned char *in, size_t len,
+               unsigned char **out, size_t *out_len);
+
+/*
+ * Decode an ANS-encoded block produced by ans_encode.
+ * Allocates *out (caller must free).
+ * Returns 0 on success, -1 on error.
+ */
+int ans_decode(const unsigned char *in, size_t in_len,
+               unsigned char **out, size_t *out_len);
+
+/*
+ * Run ANS self-tests; prints PASS/FAIL for each case.
+ */
+void run_ans_tests(void);
 
 #endif /* BZIP2_H */

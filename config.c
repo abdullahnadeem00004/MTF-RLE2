@@ -50,7 +50,7 @@ Config *load_config(const char *filename)
     cfg->rle1_enabled  = true;
     cfg->mtf_enabled   = true;
     cfg->rle2_enabled  = true;
-    cfg->huffman_enabled = true;
+    cfg->ans_enabled = true;
     cfg->benchmark_mode  = false;
     cfg->output_metrics  = true;
     strncpy(cfg->bwt_type,        "matrix",       sizeof(cfg->bwt_type)        - 1);
@@ -105,8 +105,8 @@ Config *load_config(const char *filename)
                 cfg->mtf_enabled = parse_bool(val);
             } else if (strcmp(key, "rle2_enabled") == 0) {
                 cfg->rle2_enabled = parse_bool(val);
-            } else if (strcmp(key, "huffman_enabled") == 0) {
-                cfg->huffman_enabled = parse_bool(val);
+            } else if (strcmp(key, "ans_enabled") == 0) {
+                cfg->ans_enabled = parse_bool(val);
             }
         }
 
@@ -145,7 +145,7 @@ void print_config(const Config *cfg)
     printf("  bwt_type        : %s\n",          cfg->bwt_type);
     printf("  mtf_enabled     : %s\n",          cfg->mtf_enabled     ? "true" : "false");
     printf("  rle2_enabled    : %s\n",          cfg->rle2_enabled    ? "true" : "false");
-    printf("  huffman_enabled : %s\n",          cfg->huffman_enabled ? "true" : "false");
+    printf("  ans_enabled : %s\n",          cfg->ans_enabled ? "true" : "false");
     printf("  benchmark_mode  : %s\n",          cfg->benchmark_mode  ? "true" : "false");
     printf("  output_metrics  : %s\n",          cfg->output_metrics  ? "true" : "false");
     printf("  input_dir       : %s\n",          cfg->input_directory);

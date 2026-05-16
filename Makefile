@@ -2,7 +2,7 @@
 CC      = gcc
 CFLAGS  = -Wall -Wextra -Wpedantic -std=c11 -O2 -g
 TARGET  = bzip2_phase2
-SRCS    = main.c config.c block.c rle1.c bwt.c mtf.c rle2.c
+SRCS    = main.c config.c block.c rle1.c bwt.c mtf.c rle2.c ans.c
 OBJS    = $(SRCS:.c=.o)
 
 .PHONY: all clean test sample verify
